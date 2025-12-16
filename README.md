@@ -1,1 +1,1 @@
-"# firebase-hello-world" 
+Hello world example that uses Firebase
