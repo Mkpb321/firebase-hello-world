@@ -1,1 +1,31 @@
-hello
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hello World – Firebase Chat (minimal)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <h1>Hello World Chat</h1>
+
+  <!-- Sehr “roh”: einfache Liste für Messages -->
+  <ol id="messages"></ol>
+
+  <!-- Eingabe unten -->
+  <form id="composer" autocomplete="off">
+    <input
+      id="messageInput"
+      type="text"
+      placeholder="Nachricht schreiben…"
+      maxlength="500"
+      required
+    />
+    <button type="submit">Senden</button>
+  </form>
+
+  <!-- Wichtig: type="module" für Firebase ESM Imports -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
