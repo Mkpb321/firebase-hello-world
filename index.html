@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hello World – Firebase Chat (minimal)</title>
+  <!-- Basis-Styles für Layout und Lesbarkeit -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
@@ -11,8 +12,10 @@
 <body>
   <h1>Hello World Chat</h1>
 
+  <!-- Hier werden die Messages live gerendert -->
   <ol id="messages"></ol>
 
+  <!-- Einfaches Input-Formular zum Senden neuer Nachrichten -->
   <form id="composer" autocomplete="off">
     <input
       id="messageInput"
@@ -24,6 +27,7 @@
     <button type="submit">Senden</button>
   </form>
 
+  <!-- App-Logik (Firebase + UI) -->
   <script type="module" src="app.js"></script>
 </body>
 </html>
