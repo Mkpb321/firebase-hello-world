@@ -4,6 +4,25 @@ body {
   margin: 16px;
 }
 
+/* Einfaches Panel-Spacing */
+section {
+  margin-top: 12px;
+}
+
+/* Utility: Elemente ausblenden */
+.hidden {
+  display: none;
+}
+
+/* Kleine Zeile für Logout/Benutzer */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
 /* Scrollbarer Bereich für Chat-Nachrichten */
 #messages {
   border: 1px solid #ccc;
@@ -17,7 +36,7 @@ body {
   margin: 0 0 8px 0;
 }
 
-/* Composer-Layout */
+/* Form-Layout */
 form {
   margin-top: 12px;
   display: flex;
@@ -28,4 +47,10 @@ form {
 input {
   flex: 1;
   padding: 6px;
+}
+
+/* Auth-Message: minimal, gut lesbar */
+#authMessage {
+  margin-top: 8px;
+  min-height: 1.2em;
 }

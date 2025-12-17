@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hello World – Firebase Chat (minimal)</title>
-  <!-- Basis-Styles für Layout und Lesbarkeit -->
+  <title>Hello World – Firebase Chat</title>
+  <!-- Minimale Styles (kein Design-Fokus) -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
@@ -12,22 +12,46 @@
 <body>
   <h1>Hello World Chat</h1>
 
-  <!-- Hier werden die Messages live gerendert -->
-  <ol id="messages"></ol>
+  <!-- Auth-UI: nur Login (keine Registrierung) -->
+  <section id="authPanel">
+    <h2>Anmelden</h2>
 
-  <!-- Einfaches Input-Formular zum Senden neuer Nachrichten -->
-  <form id="composer" autocomplete="off">
-    <input
-      id="messageInput"
-      type="text"
-      placeholder="Nachricht schreiben…"
-      maxlength="500"
-      required
-    />
-    <button type="submit">Senden</button>
-  </form>
+    <!-- Login-Formular: E-Mail/Passwort -->
+    <form id="loginForm" autocomplete="off">
+      <input id="emailInput" type="email" placeholder="E-Mail" required />
+      <input id="passwordInput" type="password" placeholder="Passwort" required />
+      <button type="submit">Login</button>
+    </form>
 
-  <!-- App-Logik (Firebase + UI) -->
+    <!-- Kurzer Platz für Fehler/Status -->
+    <p id="authMessage" role="status" aria-live="polite"></p>
+  </section>
+
+  <!-- Chat-UI: wird erst nach erfolgreichem Login angezeigt -->
+  <section id="chatPanel" class="hidden">
+    <!-- Kopfzeile: Benutzerinfo + Logout -->
+    <div class="row">
+      <div id="userLabel"></div>
+      <button id="signOutBtn" type="button">Logout</button>
+    </div>
+
+    <!-- Live-Message-Liste -->
+    <ol id="messages"></ol>
+
+    <!-- Composer: neue Nachricht senden -->
+    <form id="composer" autocomplete="off">
+      <input
+        id="messageInput"
+        type="text"
+        placeholder="Nachricht schreiben…"
+        maxlength="500"
+        required
+      />
+      <button type="submit">Senden</button>
+    </form>
+  </section>
+
+  <!-- App-Logik (Firebase Auth + Firestore + UI) -->
   <script type="module" src="app.js"></script>
 </body>
 </html>
